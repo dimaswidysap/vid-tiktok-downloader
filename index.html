@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TikTok Downloader</title>
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/style-content.css" />
+    <link rel="stylesheet" href="css/footer.css" />
+    <!-- <link rel="stylesheet" href="css/button.css" /> -->
+
+    <script src="javascript/script.js"></script>
+  </head>
+  <body>
+    <header>
+      <nav>tes</nav>
+    </header>
+    <main>
+      <section class="con-form">
+        <div>
+          <div>
+            <input
+              type="text"
+              id="videoUrl"
+              placeholder="Tempel link TikTok di sini..."
+            />
+
+            <button onclick="downloadVideo()" id="btnDownload">
+              Ambil Video
+            </button>
+          </div>
+
+          <p id="loading">Sabar ya, lagi diproses...</p>
+        </div>
+      </section>
+
+      <section class="con-content">
+        <p id="videoTitle">Vedeomu nanti disini!</p>
+
+        <figure id="result">
+          <img
+            id="thumbnail"
+            class="w-full rounded-lg mb-4 shadow-sm"
+            src=""
+            alt="Thumbnail"
+          />
+        </figure>
+        <a
+          id="downloadLink"
+          href="#"
+          class="block text-center bg-green-500 hover:bg-green-600 text-white py-2 rounded-lg font-bold"
+        >
+          Download Video
+        </a>
+      </section>
+    </main>
+    <footer></footer>
+  </body>
+</html>
