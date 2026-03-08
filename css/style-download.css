@@ -1,0 +1,61 @@
+.con-down-vid {
+  position: fixed;
+  z-index: 200;
+  inset: 0;
+  height: 100svh;
+  width: 100%;
+  backdrop-filter: blur(5px);
+  background-color: #47474757;
+}
+
+.btn-back {
+  position: absolute;
+  right: 0;
+  margin: 1rem;
+  padding: 0.5rem 1.2rem;
+  border-radius: 10px;
+  font-weight: 800;
+  background-color: var(--tk-dark-gray);
+  color: var(--tk-light-gray);
+}
+
+.con-kiri {
+  position: relative;
+  height: 100svh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: aqua; */
+}
+
+.con-kiri div {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 80%;
+  aspect-ratio: 9/16;
+  /* background-color: blue; */
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.751) 0px 3px 8px;
+  background-color: var(--skel);
+}
+
+.con-kiri div img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.con-kiri div button {
+  position: absolute;
+  bottom: 0;
+  margin: 2rem 0;
+  padding: 0.4rem 1.2rem;
+  border-radius: 10px;
+  border: none;
+  background-color: var(--tk-dark-gray);
+  color: var(--tk-light-gray);
+  font-weight: 800;
+}

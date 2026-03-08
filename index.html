@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TikTok Downloader</title>
     <!-- <script src="https://cdn.tailwindcss.com"></script> -->
-
-    <link rel="stylesheet" href="css/ham-button.css" />
+    <link rel="stylesheet" href="css/style-download.css" />
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/ham-button.css" />
     <link rel="stylesheet" href="css/style-content.css" />
     <link rel="stylesheet" href="css/footer.css" />
     <link rel="stylesheet" href="css/warning.css" />
@@ -15,55 +15,41 @@
   </head>
   <body>
     <header>
-      <nav></nav>
+      <nav>
+        <h1>TT-Save</h1>
+      </nav>
     </header>
+
     <main>
-      <section class="con-form">
+      <section>
+        <h2>Download TikTok Videos Easily & Without Watermark</h2>
+        <h5>Simple and Fast</h5>
         <div>
-          <div>
-            <div class="con-input">
-              <input
-                type="text"
-                id="videoUrl"
-                placeholder="Tempel link TikTok di sini..."
-              />
-              <button class="btn-clear-input">
-                <p>Clear</p>
-              </button>
-            </div>
+          <button>Clear</button>
+          <input placeholder="Paste link here!" type="text" />
+        </div>
+        <div>
+          <button>Download</button>
+        </div>
+        <section class="bg-hl1">
+          <span></span>
+          <span></span>
+          <span></span>
+        </section>
+      </section>
+      <section></section>
+    </main>
 
-            <button id="btnDownload">Ambil Video</button>
-            <button class="hidden">Download vedeo lain</button>
-          </div>
-
-          <p id="loading">Sabar ya, lagi diproses...</p>
+    <section class="con-down-vid">
+      <button class="btn-back">Back</button>
+      <section class="con-kiri">
+        <div>
+          <button>Download</button>
+          <img src="" alt="thumbnail" />
         </div>
       </section>
-
-      <section class="con-content">
-        <!-- <p id="videoTitle">Vedeomu nanti disini!</p> -->
-
-        <figure id="result">
-          <img
-            id="thumbnail"
-            class="w-full rounded-lg mb-4 shadow-sm"
-            src=""
-            alt="Thumbnail"
-          />
-        </figure>
-        <a id="downloadLink" href="#" class="hidden"> Download Video </a>
-      </section>
-    </main>
-    <footer></footer>
-
-    <section class="warning">
-      <div>
-        <p>Input url Empty</p>
-        <button class="btn-warning-close">Okey</button>
-      </div>
     </section>
-
-    <script type="module" src="javascript/script.js"></script>
-    <script type="module" src="javascript/input.js"></script>
+    <!-- <script type="module" src="javascript/script.js"></script> -->
+    <!-- <script type="module" src="javascript/input.js"></script> -->
   </body>
 </html>
