@@ -1,3 +1,10 @@
+import warning from "./warning.js";
+const btnDownload = document.getElementById("btnDownload");
+
+btnDownload.addEventListener("click", () => {
+  downloadVideo();
+});
+
 async function downloadVideo() {
   const url = document.getElementById("videoUrl").value;
   const btn = document.getElementById("btnDownload");
@@ -5,7 +12,8 @@ async function downloadVideo() {
   const loading = document.getElementById("loading");
 
   if (!url) {
-    alert("Masukkan URL TikTok terlebih dahulu!");
+    // alert("Masukkan URL TikTok terlebih dahulu!");
+    warning();
     return;
   }
 
@@ -29,8 +37,6 @@ async function downloadVideo() {
 
       // Update UI (Thumbnail dan Judul)
       document.getElementById("thumbnail").src = videoData.cover;
-      document.getElementById("videoTitle").innerText =
-        videoData.title || "Video TikTok";
 
       // 2. Logika "Force Download"
       const downloadBtn = document.getElementById("downloadLink");
