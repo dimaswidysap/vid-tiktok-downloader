@@ -46,18 +46,16 @@ async function downloadVideo() {
       shwoDownload();
 
       const videoData = data.data;
-      const videoUrl = videoData.play; // Ini adalah link video tanpa watermark
+      const videoUrl = videoData.play;
       const fileName = `tiktok_video_${videoData.id}.mp4`;
 
-      // Update UI (Thumbnail dan Judul)
       document.getElementById("thumbnail").src = videoData.cover;
 
       // 2. Logika "Force Download"
       const downloadBtn = document.getElementById("downloadLink");
 
-      // Kita ubah fungsi klik pada tombol download
       downloadBtn.onclick = async (e) => {
-        e.preventDefault(); // Mencegah buka tab baru
+        e.preventDefault();
 
         downloadBtn.textContent = "Wait...";
 
@@ -67,17 +65,15 @@ async function downloadVideo() {
           const blob = await res.blob();
           const blobUrl = window.URL.createObjectURL(blob);
 
-          // Buat elemen link sementara untuk memicu download
           const a = document.createElement("a");
           a.href = blobUrl;
-          a.download = fileName; // Nama file saat disimpan
+          a.download = fileName;
           document.body.appendChild(a);
           a.click();
 
           window.URL.revokeObjectURL(blobUrl);
           document.body.removeChild(a);
         } catch (err) {
-          // Jika kena blokir CORS, kita buka di tab baru sebagai fallback
           window.open(videoUrl, "_blank");
         } finally {
         }
