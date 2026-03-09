@@ -11,12 +11,13 @@
     <link rel="stylesheet" href="css/style-content.css" />
     <link rel="stylesheet" href="css/footer.css" />
     <link rel="stylesheet" href="css/warning.css" />
+    <link rel="stylesheet" href="css/thanks-section.css" />
     <!-- <link rel="stylesheet" href="css/button.css" /> -->
   </head>
   <body>
     <header>
       <nav>
-        <h1>TT-Save</h1>
+        <h1>VidSave</h1>
       </nav>
     </header>
 
@@ -25,11 +26,11 @@
         <h2>Download TikTok Videos Easily & Without Watermark</h2>
         <h5>Simple and Fast</h5>
         <div>
-          <button>Clear</button>
-          <input placeholder="Paste link here!" type="text" />
+          <button class="btn-clear-input">Clear</button>
+          <input id="videoUrl" placeholder="Paste link here!" type="text" />
         </div>
         <div>
-          <button>Download</button>
+          <button id="btnDownload">Download</button>
         </div>
         <section class="bg-hl1">
           <span></span>
@@ -37,19 +38,36 @@
           <span></span>
         </section>
       </section>
-      <section></section>
     </main>
+
+    <section class="con-thanks">
+      <section>
+        <div class="icon-tiktok">
+          <img src="asset/icon/tik-tok.png" alt="" />
+        </div>
+        <span class="circle-blur"></span>
+      </section>
+    </section>
 
     <section class="con-down-vid">
       <button class="btn-back">Back</button>
       <section class="con-kiri">
         <div>
-          <button>Download</button>
-          <img src="" alt="thumbnail" />
+          <button id="downloadLink" class="hjhjhu">Download</button>
+          <img id="thumbnail" src="" alt="thumbnail" />
         </div>
       </section>
     </section>
-    <!-- <script type="module" src="javascript/script.js"></script> -->
-    <!-- <script type="module" src="javascript/input.js"></script> -->
+
+    <section class="warning">
+      <div>
+        <p>Input url Empty</p>
+        <button class="btn-warning-close">Okey</button>
+      </div>
+    </section>
+
+    <script type="module" src="javascript/download.js"></script>
+    <script type="module" src="javascript/script.js"></script>
+    <script type="module" src="javascript/input.js"></script>
   </body>
 </html>

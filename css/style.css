@@ -183,12 +183,3 @@ button {
 button:active {
   transform: scale(0.8);
 }
-
-main section:nth-child(2) {
-  position: relative;
-  z-index: 4;
-  width: 100%;
-  height: 40rem;
-  background-color: #232323;
-  box-shadow: rgba(0, 0, 0, 0.744) 0px -8px 50px;
-}

@@ -1,4 +1,5 @@
 import warning from "./warning.js";
+import shwoDownload from "./download.js";
 const btnDownload = document.getElementById("btnDownload");
 
 btnDownload.addEventListener("click", () => {
@@ -18,10 +19,10 @@ async function downloadVideo() {
   }
 
   // Reset tampilan & Loading state
-  resultDiv.classList.add("hidden");
-  loading.classList.remove("hidden");
-  btn.disabled = true;
-  btn.innerText = "Memproses...";
+  // resultDiv.classList.add("hidden");
+  // loading.classList.remove("hidden");
+  // btn.disabled = true;
+  // btn.innerText = "Memproses...";
 
   try {
     // 1. Ambil data dari API Tikwm
@@ -30,7 +31,11 @@ async function downloadVideo() {
     );
     const data = await response.json();
 
+    console.log(data);
+
     if (data.code === 0) {
+      shwoDownload();
+
       const videoData = data.data;
       const videoUrl = videoData.play; // Ini adalah link video tanpa watermark
       const fileName = `tiktok_video_${videoData.id}.mp4`;
@@ -67,12 +72,10 @@ async function downloadVideo() {
           // Jika kena blokir CORS, kita buka di tab baru sebagai fallback
           window.open(videoUrl, "_blank");
         } finally {
-          downloadBtn.innerText = "Download Video (No Watermark)";
-          downloadBtn.style.backgroundColor = "#22c55e"; // Kembali ke hijau
         }
       };
 
-      resultDiv.classList.remove("hidden");
+      // resultDiv.classList.remove("hidden");
     } else {
       alert("Gagal mengambil video. Pastikan link benar.");
     }
@@ -80,7 +83,7 @@ async function downloadVideo() {
     console.error(error);
     alert("Terjadi kesalahan koneksi.");
   } finally {
-    loading.classList.add("hidden");
+    // loading.classList.add("hidden");
     btn.disabled = false;
     btn.innerText = "Ambil Video";
   }
