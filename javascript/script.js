@@ -1,9 +1,18 @@
+const url = document.getElementById("videoUrl");
+
 import warning from "./warning.js";
 import shwoDownload from "./download.js";
-const btnDownload = document.getElementById("btnDownload");
+export const btnDownload = document.getElementById("btnDownload");
 
 btnDownload.addEventListener("click", () => {
-  downloadVideo();
+  const valueUrl = url.value;
+
+  if (!valueUrl) {
+    warning();
+  } else {
+    btnDownload.textContent = "Processing";
+    downloadVideo();
+  }
 });
 
 async function downloadVideo() {
@@ -12,11 +21,11 @@ async function downloadVideo() {
   const resultDiv = document.getElementById("result");
   const loading = document.getElementById("loading");
 
-  if (!url) {
-    // alert("Masukkan URL TikTok terlebih dahulu!");
-    warning();
-    return;
-  }
+  // if (!url) {
+  //   // alert("Masukkan URL TikTok terlebih dahulu!");
+  //   warning();
+  //   return;
+  // }
 
   // Reset tampilan & Loading state
   // resultDiv.classList.add("hidden");
@@ -31,7 +40,7 @@ async function downloadVideo() {
     );
     const data = await response.json();
 
-    console.log(data);
+    // console.log(data);
 
     if (data.code === 0) {
       shwoDownload();
@@ -49,8 +58,8 @@ async function downloadVideo() {
       // Kita ubah fungsi klik pada tombol download
       downloadBtn.onclick = async (e) => {
         e.preventDefault(); // Mencegah buka tab baru
-        downloadBtn.innerText = "Downloading...";
-        downloadBtn.style.backgroundColor = "#6b7280"; // Warna abu-abu saat proses
+
+        downloadBtn.textContent = "Wait...";
 
         try {
           // Fetch video sebagai blob
@@ -65,7 +74,6 @@ async function downloadVideo() {
           document.body.appendChild(a);
           a.click();
 
-          // Bersihkan memory
           window.URL.revokeObjectURL(blobUrl);
           document.body.removeChild(a);
         } catch (err) {
@@ -85,6 +93,6 @@ async function downloadVideo() {
   } finally {
     // loading.classList.add("hidden");
     btn.disabled = false;
-    btn.innerText = "Ambil Video";
+    // btn.innerText = "Ambil Video";
   }
 }
